@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Project 2</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script/script.js"></script>
+	<script type="text/javascript" src="script/storage.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="formWrapper">
+				<div id="loginWrapper">
+					<div id="formLabels">
+						<label for="username">Username: </label>
+						<label for="password">Password: </label>
+					</div>
+					<div id="formInput">
+						<input type="text" name="username" id="usernameTextBox" placeholder="Your username">
+						<input type="password" name="password" id="passwordTextBox" placeholder="Your password">
+					</div>
+				</div>
+				<div id="buttons">
+					<button id="saveButton">Save</button>
+					<button id="loadButton">Load</button>
+					<button id="resetButton">Reset</button>
+					<!-- buttons used for testing purposes only
+					<button id="loadAllButton">LoadAll</button>
+					<button id="clearAll">clearAll</button> -->
+				</div>
+			</div>
+			<div id="titleWrapper"><h1>World Cup Simulator</h1><small><p>Hit the "Reset" button and after insert the scores in the input boxes...</p></small></div>
+		</div>
+		<div id="content">
+			<div id="left">
+				<table>
+					<tr>
+						<td colspan="2">Group A</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupA" id="team1A" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber1" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupA" id="team2A" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber2" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupA" id="team3A" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber3" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupA" id="team4A" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber4" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p></p>
+
+				<table>
+					<tr>
+						<td colspan="2">Group B</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupB" id="team1B" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber5" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupB" id="team2B" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber6" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupB" id="team3B" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber7" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupB" id="team4B" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber8" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p></p>
+
+				<table>
+					<tr>
+						<td colspan="2">Group C</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupC" id="team1C" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber9" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupC" id="team2C" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber10" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupC" id="team3C" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber11" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupC" id="team4C" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber12" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p></p>
+
+				<table>
+					<tr>
+						<td colspan="2">Group D</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupD" id="team1D" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber13" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupD" id="team2D" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber14" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupD" id="team3D" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber15" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupD" id="team4D" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber16" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="center">
+				<div class="sectionWrapper">
+					<div class="eigthFinalsTitle">Eighth-finals</div>
+					<div class="eigthFinals" id="sectionContent1">
+						<div id="match49" class="match">
+							<table>
+								<tr><td><div id="1A"></div></td></tr>
+								<tr><td><div id="score1A"><input type="text" class="scoreInput" name="score1A" tabindex="1"></div></td></tr>
+								<tr><td><div id="score2B"><input type="text" class="scoreInput" name="score2B" tabindex="2"></div></td></tr>
+								<tr><td><div id="2B"></div></td></tr>
+							</table>
+						</div>
+						<div id="match50" class="match">
+							<table>
+								<tr><td><div id="1C"></div></td></tr>
+								<tr><td><div id="score1C"><input type="text" class="scoreInput" name="score1C" tabindex="3"></div></td></tr>
+								<tr><td><div id="score2D"><input type="text" class="scoreInput" name="score2D" tabindex="4"></div></td></tr>
+								<tr><td><div id="2D"></div></td></tr>
+							</table>
+						</div>
+						<div id="match53" class="match">
+							<table>
+								<tr><td><div id="1E"></div></td></tr>
+								<tr><td><div id="score1E"><input type="text" class="scoreInput" name="score1E" tabindex="5"></div></td></tr>
+								<tr><td><div id="score2F"><input type="text" class="scoreInput" name="score2F" tabindex="6"></div></td></tr>
+								<tr><td><div id="2F"></div></td></tr>
+							</table>
+						</div>
+						<div id="match54" class="match">
+							<table>
+								<tr><td><div id="1G"></div></td></tr>
+								<tr><td><div id="score1G"><input type="text" class="scoreInput" name="score1G" tabindex="7"></div></td></tr>
+								<tr><td><div id="score2H"><input type="text" class="scoreInput" name="score2H" tabindex="8"></div></td></tr>
+								<tr><td><div id="2H"></div></td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="sectionWrapper">
+					<div class="quarterFinalsTitle">Quarterfinals</div>
+					<div class="quarterFinals" id="sectionContent2">
+						<div id="match57" class="match">
+							<table>
+								<tr><td><div id="W49"></div></td></tr>
+								<tr><td><div id="scoreW49"><input type="text" class="scoreInput" name="scoreW49" tabindex="17"></div></td></tr>
+								<tr><td><div id="scoreW50"><input type="text" class="scoreInput" name="scoreW50" tabindex="18"></div></td></tr>
+								<tr><td><div id="W50"></div></td></tr>
+							</table>
+						</div>
+						<div id="match58" class="match">
+							<table>
+								<tr><td><div id="W53"></div></td></tr>
+								<tr><td><div id="scoreW53"><input type="text" class="scoreInput" name="scoreW53" tabindex="19"></div></td></tr>
+								<tr><td><div id="scoreW54"><input type="text" class="scoreInput" name="scoreW54" tabindex="20"></div></td></tr>
+								<tr><td><div id="W54"></div></td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="sectionWrapper">
+					<div class="semiFinalsTitle">Semifinals</div>
+					<div class="semiFinals" id="sectionContent3">
+						<div id="match61" class="match">
+							<table>
+								<tr><td><div id="W57"></div></td></tr>
+								<tr><td><div id="scoreW57"><input type="text" class="scoreInput" name="scoreW57" tabindex="25"></div></td></tr>
+								<tr><td><div id="scoreW58"><input type="text" class="scoreInput" name="scoreW58" tabindex="26"></div></td></tr>
+								<tr><td><div id="W58"></div></td></tr>
+							</table>
+						</div>
+
+					</div>
+				</div>
+				<div class="sectionWrapper" id="finalsWrapper">
+					<div class="finalTitle">Final</div>
+					<div class="final" id="sectionContent4">
+						<div id="match64" class="match">
+							<table>
+								<tr><td><div id="W61"></div></td></tr>
+								<tr><td><div id="scoreW61"><input type="text" class="scoreInput" name="scoreW61" tabindex="31"></div></td></tr>
+								<tr><td><div id="scoreW62"><input type="text" class="scoreInput" name="scoreW62" tabindex="32"></div></td></tr>
+								<tr><td><div id="W62"></div></td></tr>
+							</table>
+						</div>
+					</div>
+					<div class="thirdPlaceTitle">Third place</div>
+					<div class="thirdPlace" id="sectionContent4">
+						<div id="match63" class="match">
+							<table>
+								<tr><td><div id="L61"></div></td></tr>
+								<tr><td><div id="scoreL61"><input type="text" class="scoreInput" name="scoreL61"  tabindex="29"></div></td></tr>
+								<tr><td><div id="scoreL62"><input type="text" class="scoreInput" name="scoreL62" tabindex="30"></div></td></tr>
+								<tr><td><div id="L62"></div></td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="sectionWrapper">
+					<div class="semiFinalsTitle">Semifinals</div>
+					<div class="semiFinals" id="sectionContent5">
+						<div id="match62" class="match">
+							<table>
+								<tr><td><div id="W59"></div></td></tr>
+								<tr><td><div id="scoreW59"><input type="text" class="scoreInput" name="scoreW59" tabindex="27"></div></td></tr>
+								<tr><td><div id="scoreW60"><input type="text" class="scoreInput" name="scoreW60" tabindex="28"></div></td></tr>
+								<tr><td><div id="W60"></div></td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="sectionWrapper">
+					<div class="quarterFinalsTitle">Quarterfinals</div>
+					<div class="quarterFinals" id="sectionContent6">
+						<div id="match59" class="match">
+							<table>
+								<tr><td><div id="W51"></div></td></tr>
+								<tr><td><div id="scoreW51"><input type="text" class="scoreInput" name="scoreW51" tabindex="21"></div></td></tr>
+								<tr><td><div id="scoreW52"><input type="text" class="scoreInput" name="scoreW52" tabindex="22"></div></td></tr>
+								<tr><td><div id="W52"></div></td></tr>
+							</table>
+						</div>
+						<div id="match60" class="match">
+							<table>
+								<tr><td><div id="W55"></div></td></tr>
+								<tr><td><div id="scoreW55"><input type="text" class="scoreInput" name="scoreW55" tabindex="23"></div></td></tr>
+								<tr><td><div id="scoreW56"><input type="text" class="scoreInput" name="scoreW56" tabindex="24"></div></td></tr>
+								<tr><td><div id="W56"></div></td></tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="sectionWrapper">
+					<div class="eigthFinalsTitle">Eighth-finals</div>
+					<div class="eigthFinals" id="sectionContent7">
+
+						<div id="match51" class="match">
+							<table>
+								<tr><td><div id="1B"></div></td></tr>
+								<tr><td><div id="score1B"><input type="text" class="scoreInput" name="score1B" tabindex="9"></diB></td></tr>
+								<tr><td><div id="score2A"><input type="text" class="scoreInput" name="score2A" tabindex="10"></diA></td></tr>
+								<tr><td><div id="2A"></div></td></tr>
+							</table>
+						</div>
+						<div id="match52" class="match">
+							<table>
+								<tr><td><div id="1D"></div></td></tr>
+								<tr><td><div id="score1D"><input type="text" class="scoreInput" name="score1D" tabindex="11"></div></td></tr>
+								<tr><td><div id="score2C"><input type="text" class="scoreInput" name="score2C" tabindex="12"></div></td></tr>
+								<tr><td><div id="2C"></div></td></tr>
+							</table>
+						</div>
+						<div id="match55" class="match">
+							<table>
+								<tr><td><div id="1F"></div></td></tr>
+								<tr><td><div id="score1F"><input type="text" class="scoreInput" name="score1F" tabindex="13"></div></td></tr>
+								<tr><td><div id="score2E"><input type="text" class="scoreInput" name="score2E" tabindex="14"></div></td></tr>
+								<tr><td><div id="2E"></div></td></tr>
+							</table>
+						</div>
+						<div id="match56" class="match">
+							<table>
+								<tr><td><div id="1H"></div></td></tr>
+								<tr><td><div id="score1H"><input type="text" class="scoreInput" name="score1H" tabindex="15"></div></td></tr>
+								<tr><td><div id="score2G"><input type="text" class="scoreInput" name="score2G" tabindex="16"></div></td></tr>
+								<tr><td><div id="2G"></div></td></tr>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div id="right">
+				<table>
+					<tr>
+						<td colspan="2">Group E</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupE" id="team1E" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber17" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupE" id="team2E" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber18" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupE" id="team3E" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber19" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupE" id="team4E" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber20" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p></p>
+
+				<table>
+					<tr>
+						<td colspan="2">Group F</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupF" id="team1F" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber21" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupF" id="team2F" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber22" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupF" id="team3F" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber23" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupF" id="team4F" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber24" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p></p>
+
+				<table>
+					<tr>
+						<td colspan="2">Group G</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupG" id="team1G" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber25" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupG" id="team2G" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber26" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupG" id="team3G" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber27" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupG" id="team4G" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber28" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p></p>
+
+				<table>
+					<tr>
+						<td colspan="2">Group H</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>1</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupH" id="team1H" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber29" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>2</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupH" id="team2H" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber30" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>3</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupH" id="team3H" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber31" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="numbers">
+							<div>4</div>
+						</td>
+						<td>
+							<div class="teamsGroups" class="groupH" id="team4H" ondrop="drop(event)" ondragover="allowDrop(event)">
+								<div class="draggable" id="dragNumber32" draggable="true" ondragstart="drag(event)"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="results">
+	<table id="podiumTable">
+		<tr>
+			<td class="podium">1</td>
+			<td class="podiumTeam" id="W64"></td>
+		</tr>	
+		<tr>
+			<td class="podium">2</td>
+			<td class="podiumTeam" id="L64"></td>
+		</tr>	
+		<tr>
+			<td class="podium">3</td>
+			<td class="podiumTeam" id="W63"></td>
+		</tr>	
+	</table>
+</div>
+</body>
+</html>

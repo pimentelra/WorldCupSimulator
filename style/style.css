@@ -1,0 +1,160 @@
+body {
+	font-family: Arial;
+}
+#content input { 
+    text-align: center; 
+}
+#container {
+	align-content: stretch;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+}
+#header {
+	align-self: stretch;
+	flex: 0 1 auto;
+	order: 0;
+	/*text-align: center;*/
+	padding: 10px 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-content: flex-end;
+}
+#formWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	flex-basis: 25%;
+	background-color: lightgray;
+}
+#loginWrapper {
+	padding-bottom: 5px;
+	display: flex;
+
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+#formLabels {
+	text-align: right;
+}
+
+#buttons, #titleWrapper {
+	align-self: center;
+}
+#buttons {
+	display: flex;
+	flex-direction: column;
+}
+#titleWrapper {
+	padding-left: 100px;
+}
+#content {
+	align-self: stretch;
+	display: flex;
+	flex-direction: row;
+	flex: 0 1 auto;
+	justify-content: space-between;
+	order: 0;
+}
+#left, #right {
+	flex-basis: 10%;
+	flex-grow: 0;
+	flex-shrink: 0; 
+}
+#center {
+	align-content: stretch;
+	display: flex;
+	flex-basis: 80%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	padding: 0px 10px;
+}
+.sectionWrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	text-align: center;
+}
+
+#finalsWrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+td {
+	text-align: center;
+	height: 20px;
+}
+th, td {
+	vertical-align: center;
+}
+.numbers {
+	width: 15px;
+}
+
+.scoreInput {
+	width: 20px;
+}
+
+.eigthFinals, .quarterFinals, .semiFinals, .final {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: stretch;
+	align-items: stretch;
+	flex-basis: 100%;
+}
+
+.eigthFinals table {
+	background-color: lightgreen;
+}
+.quarterFinals table {
+	background-color: red;
+}
+.semiFinals table {
+	background-color: orange;
+}
+.thirdPlace table {
+	background-color: #6699cc;
+}
+.final table {
+	background-color: #cc0000;
+}
+
+.match {
+	padding: 30px 0px;
+}
+
+#podiumTable {
+	margin: 0 auto;
+	border: 1px solid black;
+	table-layout: fixed;
+	width: 250px;
+}
+.podium {
+	width: 15px;
+}
+.podiumTeam {
+	white-space: nowrap;
+}
